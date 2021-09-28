@@ -29,7 +29,7 @@ public class DriverFactory {
                 WebDriverManager.chromedriver().setup();
 
 	            ChromeOptions options = new ChromeOptions();
-	            if ("Y".equalsIgnoreCase(System.getenv("HEADLESS"))) {
+	            // if ("Y".equalsIgnoreCase(System.getenv("HEADLESS"))) {
 	                options.addArguments("--headless");
 	                options.addArguments("--disable-gpu");
                     // To fix browser crash issue
@@ -39,9 +39,9 @@ public class DriverFactory {
                     // To fix browser hanging-up issue
                     options.addArguments("--dns-prefetch-disable");
                     options.addArguments("--always-authorize-plugins");
-	            } else {
-                    options.addArguments("--no-sandbox");
-                }
+	            // } else {
+                //     options.addArguments("--no-sandbox");
+                // }
 
 	            return new ChromeDriver(options);
         }
